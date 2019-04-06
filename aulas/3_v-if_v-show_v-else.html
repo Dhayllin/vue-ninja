@@ -9,6 +9,11 @@
 <body>
     <div id="app" >
         {{ title }}
+        <div v-if="usuario.id == 1">
+            {{ usuario.id }}<br>
+            {{ usuario.nome}} <br>
+            {{ usuario.profissao}} <br>
+        </div>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
@@ -17,7 +22,12 @@
         var app = new Vue({
             el:"#app",
             data:{
-                title:"Aula 03 do jeito ninja!"
+                title: "Vue js do jeito  ninja!",
+                usuario:{
+                    id: 1,
+                    nome: "Jon Snow",
+                    profissao: "Ator"
+                }
             }
         })
     </script>
