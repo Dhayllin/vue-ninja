@@ -15,22 +15,37 @@
     </style>
 </head>
 <body>
+  
+    <div id="app-2">
+
+       <h1>{{ title }}</h1> <br>
+    
+        <span :title="message">
+        Pare o mouse sobre mim e veja a dica interligada dinamicamente!
+        </span>
+    </div>
     <div id="app" >
-       <h1>{{ title }}</h1> 
        <p :class="classHtml">Sunt amet excepteur tempor Lorem ut. Do dolore eiusmod quis enim mollit officia consectetur cillum amet cupidatat laborum ut aliqua. Adipisicing ad reprehenderit nostrud labore deserunt. Fugiat esse quis velit officia sunt est quis exercitation laborum.</p>
        <img :src="'https://images7.kabum.com.br/produtos/fotos/97997/97997_1_1535039455_gg.jpg'"
             :alt="'Vue is awesome!'" title="" id="">  
     </div>
-
+   
     <script src="https://unpkg.com/vue"></script>
 
     <script>
         var app = new Vue({
             el:"#app",
-            data:{
-                title: "Vue js do jeito  ninja!",    
+            data:{              
                 classHtml:"gree"            
             }
+        })
+
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                title: "Vue js do jeito  ninja!",    
+                message: 'Você carregou esta página em ' + new Date().toLocaleString()
+            }       
         })
     </script>
 </body>
