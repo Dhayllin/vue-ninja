@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue do Jeito Ninja! 04 </title>
+    <style>
+        .red{
+            color:red
+        }
+        .gree{
+            color:green
+        }
+    </style>
+</head>
+<body>
+    <div id="app" >
+       <h1>{{ title }}</h1> 
+       <p :class="classHtml">Sunt amet excepteur tempor Lorem ut. Do dolore eiusmod quis enim mollit officia consectetur cillum amet cupidatat laborum ut aliqua. Adipisicing ad reprehenderit nostrud labore deserunt. Fugiat esse quis velit officia sunt est quis exercitation laborum.</p>
+       <img :src="'https://images7.kabum.com.br/produtos/fotos/97997/97997_1_1535039455_gg.jpg'"
+            :alt="'Vue is awesome!'" title="" id="">  
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                title: "Vue js do jeito  ninja!",    
+                classHtml:"gree"            
+            }
+        })
+    </script>
+</body>
+</html> 
