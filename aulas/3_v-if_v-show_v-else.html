@@ -9,10 +9,14 @@
 <body>
     <div id="app" >
         {{ title }}
-        <div v-if="usuario.id == 1">
+        <div v-if="usuario.id ==2 ">
             {{ usuario.id }}<br>
             {{ usuario.nome}} <br>
             {{ usuario.profissao}} <br>
+        </div>
+        <div v-else>
+            <br>
+            Não tem usuario.
         </div>
     </div>
 
