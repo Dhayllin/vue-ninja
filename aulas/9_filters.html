@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue do Jeito Ninja! 04 </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+  
+    <div id="app">
+
+     <h1>{{ title }}</h1> <br>
+     <ul>
+        <div v-for="item in usuarios">
+            {{item.nome | truncate('10') }}        
+         </div>
+    </ul>
+      
+     <form action="https://www.google.com/">
+        <button class="btn btn-primary" @:click.prevent.stop="enviar()">Enviar</button>
+     </form>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{              
+                title:"Vue do Jeito Ninja!",
+                usuarios:[
+                    {nome: "Jon Snaw"},
+                    {nome: "Tyrion Lennister"} ,             
+                    {nome: "Daenerys Targeryen"},                      
+                ]  
+            },
+            filters: {
+                toUpperCase(str){
+                    return str.toUpperCase();
+                },
+
+                truncate(str,length){
+                    var output = str;
+                    if(output.length > length){
+                        output = str.substring(0,length).toUpperCase() + "   Ouve Corte";
+                    }
+                    return output;
+                }
+            },
+            methods: {
+                enviar(){
+                    alert("Enviado!")
+                }
+            },
+        })
+    </script>
+</body>
+</html> 
