@@ -12,25 +12,45 @@
     <div id="app">
 
      <h1>{{ title }}</h1> <br>
-
-     {{ fullName }}
    
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script>
         var app = new Vue({
             el:"#app",
-            data:{              
-                title:"Vue do Jeito Ninja!",
-                firstName: 'Foo',
-                lastName: 'Bar',        
+            beforeCreate(){
+                console.log('beforeCreate');
+                console.log('Título',this.title);
+                console.log('El',this.$el);
             },
-            computed: {
-                fullName: function () {
-                return this.firstName + ' ' + this.lastName
-                }
-            }
-       
+            created() {
+                console.log('created');
+                console.log('Título',this.title);
+                console.log('El',this.$el);
+            },
+            beforeMount() {
+                console.log('beforeMount');
+                console.log('Título',this.title);
+                console.log('El',this.$el);
+            },
+            mounted() {
+                console.log('mounted');
+                console.log('Título',this.title);
+                console.log('El',this.$el);
+            },
+            beforeUpdate() {
+                console.log('beforeUpdate');
+                console.log('Título',this.title);
+                console.log('El',this.$el);
+            },
+            updated() {
+                console.log('updated');
+                console.log('Título',this.title);  
+                console.log('El',this.$el);           
+            },
+            data:{              
+                title:"Vue do Jeito Ninja!",         
+            },
     })
     </script>
 </body>
