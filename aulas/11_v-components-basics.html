@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue do Jeito Ninja! 04 </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>  
+    <div id="app">
+        <div class="row">
+            <div class="col">
+                    
+            </div>       
+        </div>   
+
+        <menu-bar></menu-bar>
+        <menu-bar></menu-bar>
+        <menu-bar></menu-bar>
+       
+    </div>
+    <template id="menu">
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li> Item 1 </li>
+                    <li> Item 2 </li>
+                </ul> 
+            </div>            
+        </div>             
+    </template>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+
+        Vue.component('menu-bar',{
+            template: '#menu'
+        });
+
+        var app = new Vue({
+            el:"#app",
+            data:{              
+                title:"Vue do Jeito Ninja!",         
+            },
+    })
+    </script>
+</body>
+</html> 
