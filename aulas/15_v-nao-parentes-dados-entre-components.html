@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue do Jeito Ninja ! 04 </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>  
+    <div id="app"> 
+        <br> <br> <br>
+        <div class="container">
+            <input-form></input-form>
+        <br> <br> <br> <br>
+            <my-list></my-list>
+        </div>
+    </div>
+    <template id="form">
+        <div class="card">
+            <div class="card-block">
+                <div class="form-group"><label for=""> Título </label>
+                    <input type="text" class="form-group-control"> 
+                </div>
+                <button class="btn btn-primary"> Enviar  </button>                            
+            </div>
+        </div>
+    </template>
+    <template id="list">
+        <ul class="list-group">
+            <li class="list-group-item">List 1  </li>      
+            <li class="list-group-item">List 2  </li>   
+            <li class="list-group-item">List 3  </li>     
+            <li class="list-group-item">List 4  </li>      
+        </ul>  
+        </template>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+
+        Vue.component(input-form, {
+            template: '#form'
+        });
+
+        Vue.component(mylist, {
+            template: '#list'
+        });
+
+        var app = new Vue({
+            el:"#app",
+            data:{              
+                title:"Vue do Jeito Ninja!",         
+            },
+        })
+    </script>
+</body>
+</html> 

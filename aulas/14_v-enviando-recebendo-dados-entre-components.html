@@ -20,7 +20,7 @@
             </button>
             
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <menu-bar v-bind:itens="topNav"></menu-bar>
+                <menu-bar v-bind:itens="topNav" @emit-click="getLink"></menu-bar>
                 <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -46,7 +46,10 @@
                 return{
                     topNav: [{ label: 'cHome' },{ label: 'cLink'},{ label: 'cDisabled'}]
                 }               
-            }
+            },
+            getLink: function(index){
+                alert(this.topNav[index].label);
+            },
         });
 
         Vue.component('menu-bar',{
